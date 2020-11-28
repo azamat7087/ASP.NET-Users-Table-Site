@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Users Tabke</title>
+</head>
+<body>
+    <div>
+        <h3>Распродажа книг</h3>
+        <table border="2">
+            <tr>
+                <td><p>First name</p></td>
+                <td><p>Last name</p></td>
+                <td><p>Age</p></td>
+                <td><p>Gender</p></td>
+                <td><p>Country</p></td>
+                <td><p>Email</p></td>
+                <td></td>
+                <td></td>
+            </tr>
+            @foreach (var u in ViewBag.Users)
+            {
+                <tr>
+                    <td><p>@u.First_Name</p></td>
+                    <td><p>@u.Last_Name</p></td>
+                    <td><p>@u.Age</p></td>
+                    <td><p>@u.Gender</p></td>
+                    <td><p>@u.Country</p></td>
+                    <td><p>@u.Email</p></td>
+                    <td><p><a href="/Home/Buy/@u.Id">Change</a></p></td>
+                    <td><p><a href="/Home/Delete/@u.Id">Delete</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</body>
+</html>
