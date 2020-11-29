@@ -15,7 +15,7 @@ namespace TEST.Helpers
                 foreach (var item in items)
                 {
                     TagBuilder li = new TagBuilder("li");
-                    li.SetInnerText(item.First_Name);
+                    li.SetInnerText(item.Email);
                     ul.InnerHtml += li.ToString();
                 }
                 return new MvcHtmlString(ul.ToString());
