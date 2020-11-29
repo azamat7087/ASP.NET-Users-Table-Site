@@ -8,35 +8,58 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Users Tabke</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        table {
+             /* Ширина таблицы */
+            border: 1px solid green; /* Рамка вокруг таблицы */
+            margin: auto; /* Выравниваем таблицу по центру окна  */
+        }
+
+        td {
+            text-align: center; /* Выравниваем текст по центру ячейки */
+        }
+
+        #main {
+            border: 2px gray solid;
+            padding: 10px;
+        }
+    </style>
 </head>
-<body>
-    <div>
-        <h3>Распродажа книг</h3>
-        <table border="2">
-            <tr>
-                <td><p>First name</p></td>
-                <td><p>Last name</p></td>
-                <td><p>Age</p></td>
-                <td><p>Gender</p></td>
-                <td><p>Country</p></td>
-                <td><p>Email</p></td>
-                <td></td>
-                <td></td>
-            </tr>
-            @foreach (var u in ViewBag.Users)
-            {
+<body style="text-align: center; align-items: center; ">
+    <div id="main">
+        <p>
+            <h3>Users Table</h3>
+        </p>
+        <p>
+            <table border="2">
                 <tr>
-                    <td><p>@u.First_Name</p></td>
-                    <td><p>@u.Last_Name</p></td>
-                    <td><p>@u.Age</p></td>
-                    <td><p>@u.Gender</p></td>
-                    <td><p>@u.Country</p></td>
-                    <td><p>@u.Email</p></td>
-                    <td><p><a href="/Home/Buy/@u.Id">Change</a></p></td>
-                    <td><p><a href="/Home/Delete/@u.Id">Delete</a></p></td>
-                </tr>
-            }
+                    <td>
+        <p>First name</p></td>
+        <td><p>Last name</p></td>
+        <td><p>Age</p></td>
+        <td><p>Gender</p></td>
+        <td><p>Country</p></td>
+        <td><p>Email</p></td>
+        <td></td>
+        <td></td>
+        </tr>
+        @foreach (var u in ViewBag.Users)
+        {
+            <tr>
+                <td><p>@u.First_Name</p></td>
+                <td><p>@u.Last_Name</p></td>
+                <td><p>@u.Age</p></td>
+                <td><p>@u.Gender</p></td>
+                <td><p>@u.Country</p></td>
+                <td><p>@u.Email</p></td>
+                <td><p><a href="/Home/Update/@u.Id">Update</a></p></td>
+                <td><p><a href="/Home/Delete/@u.Id">Delete</a></p></td>
+            </tr>
+        }
         </table>
+        </p>
+        <p><a href="/Home/Create/" class="btn btn-primary">Create</a></p>
     </div>
 
 </body>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,11 +21,52 @@ namespace TEST.Controllers
             return View();
         }
 
+        //Create block
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(User user)
+        {
+            db.Users.Add(user);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
+
+        //Update block
+        [HttpGet]
+        public ActionResult Update(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            User user = db.Users.Find(id);
+
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult Update(User user)
+        {
+            db.Entry(user).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
 
 
-
+        //Delete block
         [HttpGet]
         public ActionResult Delete(int? id)
         {

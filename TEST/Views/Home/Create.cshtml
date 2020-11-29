@@ -1,0 +1,42 @@
+﻿@model TEST.Models.User
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.First_Name, "First_Name")
+    <br />
+    @Html.EditorFor(model => model.First_Name)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Last_Name, "Last_Name")
+    <br />
+    @Html.EditorFor(model => model.Last_Name)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Age, "Age")
+    <br />
+    @Html.EditorFor(model => model.Age)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Gender, "Gender")
+    <br />
+    @Html.EditorFor(model => model.Gender)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Country, "Country")
+    <br />
+    @Html.EditorFor(model => model.Country)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Email, "Email")
+    <br />
+    @Html.EditorFor(model => model.Email)
+    <br />
+    <br />
+    <input type="submit" value="CREATE" />
+}

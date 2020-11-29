@@ -1,7 +1,8 @@
 ﻿
 @model TEST.Models.User
 
+<h3>Do you really want to delete user @Model.First_Name ?</h3>
 @using (Html.BeginForm())
 {
-    <input type="submit" value="DELETE" />
+    <p><input type="submit" value="DELETE" /></p>
 }

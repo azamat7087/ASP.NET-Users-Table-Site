@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model TEST.Models.User
+<h2>User @Model.First_Name</h2>
+@using (Html.BeginForm("Update", "Home", FormMethod.Post))
+{
+<fieldset>
+    @Html.HiddenFor(m => m.Id)
+    <p>
+        @Html.LabelFor(m => m.First_Name, "First Name")
+        <br />
+        @Html.EditorFor(m => m.First_Name)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Last_Name, "Last Name")
+        <br />
+        @Html.EditorFor(m => m.Last_Name)
+
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Age, "Age")
+        <br />
+        @Html.EditorFor(m => m.Age)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Gender, "Gender")
+        <br />
+        @Html.EditorFor(m => m.Gender)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Country, "Country")
+        <br />
+        @Html.EditorFor(m => m.Country)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Email, "Email")
+        <br />
+        @Html.EditorFor(m => m.Email)
+    </p>
+    <p><input type="submit" value="Update" /></p>
+</fieldset>
+}
